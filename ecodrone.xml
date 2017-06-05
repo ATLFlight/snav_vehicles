@@ -32,10 +32,6 @@
 <!-- This file is intended for an EcoDrone vehicle -->
 
 <SnavParameters>
-  <IncludeFile name="eagle.xml"/>
-  <IncludeFile name="port_mapping.xml"/>
-  <IncludeFile name="imu_offset.xml"/>
-
   <position_control_params>
     <param name="basethrust" value="410"/>
   </position_control_params>
@@ -88,4 +84,74 @@
     <param name="max_thrust" value="900.0" derived_from = "225.0 * 4"/>
   </rc_params>
 
+  <orientation_params>
+    <param name="imu_R00" value="1.0"/>
+    <param name="imu_R01" value="0.0"/>
+    <param name="imu_R02" value="0.0"/>
+    <param name="imu_R10" value="0.0"/>
+    <param name="imu_R11" value="-1.0"/>
+    <param name="imu_R12" value="0.0"/>
+    <param name="imu_R20" value="0.0"/>
+    <param name="imu_R21" value="0.0"/>
+    <param name="imu_R22" value="-1.0"/>
+
+    <param name="mag_R00" value="-1.0"/>
+    <param name="mag_R01" value="0.0"/>
+    <param name="mag_R02" value="0.0"/>
+    <param name="mag_R10" value="0.0"/>
+    <param name="mag_R11" value="1.0"/>
+    <param name="mag_R12" value="0.0"/>
+    <param name="mag_R20" value="0.0"/>
+    <param name="mag_R21" value="0.0"/>
+    <param name="mag_R22" value="-1.0"/>
+
+    <param name="downward_cam_R00" value="0.0"/>
+    <param name="downward_cam_R01" value="-1.0"/>
+    <param name="downward_cam_R10" value="-1.0"/>
+    <param name="downward_cam_R11" value="0.0"/>
+  </orientation_params>
+
+  <rc_receiver_params>
+    <param name="is_binding_supported" value="1"/>
+    <param name="bind_mode"            value="2"/>
+    <param name="power_ctrl_pin"       value="69"/>
+    <param name="bind_pin"             value="50"/>
+  </rc_receiver_params>
+
+  <device_drivers_params>
+    <param name="rc0_driver_file_name"     value="librc0_spektrum_driver.so"/>
+    <param name="baro0_driver_file_name"   value="libbaro0_bmp280_vsense0_ltc2946_driver.so"/>
+    <param name="vsense0_driver_file_name" value="libbaro0_bmp280_vsense0_ltc2946_driver.so"/>
+    <param name="isense0_driver_file_name" value="libbaro0_bmp280_vsense0_ltc2946_driver.so"/>
+    <param name="mag0_driver_file_name"    value="libmag0_hmc5883l_driver.so"/>
+    <param name="sonar0_driver_file_name"  value="libsonar0_maxbotix_driver.so"/>
+    <param name="gnss0_driver_file_name"   value="libgnss0_ublox_driver.so"/>
+
+    <param name="imu0_driver_file_name"    value="libimu_mpu_driver.so"/>
+    <param name="imu0_update_rate_hz"      value="500"/>
+    <param name="imu0_hw_accel_lpf_hz"     value="184"/>
+    <param name="imu0_hw_gyro_lpf_hz"      value="184"/>
+    <param name="imu0_sw_accel_lpf_hz"     value="0"/>
+    <param name="imu0_sw_gyro_lpf_hz"      value="0"/>
+  </device_drivers_params>
+
+
+  <device_drivers_params>
+    <param name="imu0_device_path"         value="/dev/spi-1"/>
+    <param name="rc0_device_path"          value="/dev/tty-1"/>
+    <param name="esc0_device_path"         value="/dev/tty-2"/>
+    <param name="gnss0_device_path"        value="/dev/tty-3"/>
+    <param name="sonar0_device_path"       value="/dev/tty-4"/>
+
+    <param name="baro0_device_path"        value="/dev/iic-3"/>
+    <param name="vsense0_device_path"      value="/dev/iic-3"/>
+    <param name="isense0_device_path"      value="/dev/iic-3"/>
+    <param name="mag0_device_path"         value="/dev/iic-8"/>
+  </device_drivers_params>
+
+  <orientation_params>
+    <param name="vehicle_center_to_imu_x" value="0.0700"/>
+    <param name="vehicle_center_to_imu_y" value="0.01638"/>
+    <param name="vehicle_center_to_imu_z" value="-0.01650"/>
+  </orientation_params>
 </SnavParameters>
