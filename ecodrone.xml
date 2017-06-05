@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/*****************************************************************************
+ *
+ * Copyright 2015-2017 Qualcomm Technologies, Inc.  All rights reserved.
+ *
+ * This software may be subject to U.S. and international export, re-export
+ * or transfer laws. Diversion contrary to U.S. and international law is
+ * strictly prohibited.
+ *
+ * The party receiving this software directly from QTI (the "Recipient")
+ * may use this software solely as set forth in the agreement between the
+ * Recipient and QTI (the "Agreement"). The software may be used in source
+ * code form solely by the Recipient's employees (if any) authorized by the
+ * Agreement. Unless expressly authorized in the Agreement, the Recipient
+ * may not sublicense, assign, transfer or otherwise provide the source
+ * code to any third party. Qualcomm Technologies, Inc. retains all
+ * ownership rights in and to the software. Except as may be expressly
+ * granted by the Agreement, this file provides no license to any patents,
+ * trademarks, copyrights, or other intellectual property of QUALCOMM
+ * Incorporated or its affiliates.
+ *
+ * This notice supersedes any other QTI notices contained within the
+ * software except copyright notices indicating different years of
+ * publication for different portions of the software. This notice does not
+ * supersede the application of any third party copyright notice to that
+ * third party's code.
+ ****************************************************************************/
+-->
+
+<!-- This file is intended for an EcoDrone vehicle -->
+
+<SnavParameters>
+  <IncludeFile name="eagle.xml"/>
+  <IncludeFile name="port_mapping.xml"/>
+  <IncludeFile name="imu_offset.xml"/>
+
+  <position_control_params>
+    <param name="basethrust" value="410"/>
+  </position_control_params>
+
+  <optic_flow_estimator_params>
+    <param name="camera_offset_x" value="0.055"/>
+    <param name="camera_offset_y" value="0.0"/>
+  </optic_flow_estimator_params>
+
+  <voltage_monitor_params>
+    <param name="voltage_warn_threshold" value="10.8"/>
+    <param name="voltage_warn_critical"   value="10.57"/>
+    <param name="voltage_force_landing"   value="10.57"/>
+    <param name="voltage_no_start"        value="10"/>
+    <param name="voltage_warn_threshold_external" value="10.8"/>
+    <param name="voltage_warn_critical_external"   value="10.57"/>
+    <param name="voltage_force_landing_external"   value="10.57"/>
+    <param name="voltage_no_start_external"        value="10"/>
+    <param name="voltage_landing_reset_threshold" value="11.5"/>
+    <param name="low_voltage_thrust_slope" value="1000"/>
+  </voltage_monitor_params>
+
+  <att_control_params>
+    <param name="kp_roll_moment"   value="41.91" derived_from="1.139"/>
+    <param name="kp_pitch_moment"  value="43.09" derived_from="1.171"/>
+    <param name="kpy"              value="87.5"/>
+    <param name="kd_roll_moment"   value="4.85" derived_from="1.139"/>
+    <param name="kd_pitch_moment"  value="4.99" derived_from="1.171"/>
+    <param name="kdy"              value="18.6"/>
+
+    <param name="prop_config_type" value="0" derived_from="rectangle"/>
+    <param name="prop_config_Dx"   value="0.066"/>
+    <param name="prop_config_Dy"   value="0.0864"/>
+    <param name="prop_config_beta" value="0"/>
+
+    <param name="prop_rpm_thrust_curve_a0" value="0.0909"/>
+    <param name="prop_rpm_thrust_curve_a1" value="0.00011184"/>
+    <param name="prop_rpm_thrust_curve_a2" value="1.0840e-06"/>
+    <param name="min_rpm" value="5000"/>
+    <param name="max_rpm" value="14200"/>
+    <param name="number_of_props" value="4"/>
+  </att_control_params>
+
+  <esc_interface_params>
+    <param name="esc_protocol" value="3" derived_from="ESC_200QC_PROTOCOL"/>
+  </esc_interface_params>
+
+  <rc_params>
+    <param name="min_thrust" value="105.0" derived_from = "12.5 * 4 * 1.2"/>
+    <param name="max_thrust" value="900.0" derived_from = "225.0 * 4"/>
+  </rc_params>
+
+</SnavParameters>
