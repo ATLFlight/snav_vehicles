@@ -137,14 +137,14 @@
   </voltage_monitor_params>
 
   <att_control_params>
-    <param name="kp_roll_moment"   value="41.91" derived_from="1.139"/>
-    <param name="kp_pitch_moment"  value="43.09" derived_from="1.171"/>
+    <param name="kp_roll_moment"   value="41.91" />
+    <param name="kp_pitch_moment"  value="43.09" />
 `    <param name="kpy"              value="64.8"/>
-    <param name="kd_roll_moment"   value="4.85" derived_from="1.139"/>
-    <param name="kd_pitch_moment"  value="4.99" derived_from="1.171"/>
+    <param name="kd_roll_moment"   value="4.85" />
+    <param name="kd_pitch_moment"  value="4.99" />
     <param name="kdy"              value="10.8"/>
 
-    <param name="prop_config_type" value="0" derived_from="rectangle"/>
+    <param name="prop_config_type" value="0" />
     <param name="prop_config_Dx"   value="0.066"/>
     <param name="prop_config_Dy"   value="0.091"/>
     <param name="prop_config_beta" value="0"/>
@@ -158,12 +158,12 @@
   </att_control_params>
 
   <esc_interface_params>
-    <param name="esc_protocol" value="3" derived_from="ESC_200QC_PROTOCOL"/>
+    <param name="esc_protocol" value="3" />
   </esc_interface_params>
 
   <rc_params>
-    <param name="min_thrust" value="105.0" derived_from = "12.5 * 4 * 1.2"/>
-    <param name="max_thrust" value="900.0" derived_from = "225.0 * 4"/>
+    <param name="min_thrust" value="105.0" />
+    <param name="max_thrust" value="900.0" />
   </rc_params>
 
 </SnavParameters>
