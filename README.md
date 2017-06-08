@@ -128,5 +128,12 @@ cd /etc/snav
 ./configure_vio.sh -c downward
 ```
 
+and lastly, do a static accelerometer calibration:
+
+```bash
+adb shell
+snav_calibration_manager -s
+```
+
 After that, it's time to start flying!  Reference the user guide for next steps in flight testing.
 
