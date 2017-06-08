@@ -96,7 +96,10 @@
 
 
   <device_drivers_params>
-    <param name="imu0_device_path"         value="/dev/spi-1"/>
+    <param name="imu0_device_path"         value="/dev/null"/>
+    <!-- This is the wrong address for imu0.  It is intended to make this param file not
+    suitable for flight.  This file is only intended for flash ESC firmware and params -->
+
     <param name="rc0_device_path"          value="/dev/tty-1"/>
     <param name="esc0_device_path"         value="/dev/tty-2"/>
     <param name="gnss0_device_path"        value="/dev/tty-3"/>
