@@ -60,9 +60,10 @@ adb push snav-esc_1.2.0.deb /home/linaro/
 To install the deb files, you will have to log into a shell session on the board:
 `adb shell`
 
-In that shell session, run:
+In that shell session, run the following commands. Run them individually, as you will need to type in "Yes" to agree to the license terms for each deb file.
 
 ```bash
+cd /home/linaro
 dpkg -i mv_0.9.1_8x74.deb
 dpkg -i snav_1.2.31_8x74.deb
 dpkg -i snav-esc_1.2.0.deb
@@ -74,6 +75,7 @@ To log out of the board, type Ctrl-D or type "exit"
 Navigate to your license file location and run:
 
 ```bash
+adb shell "mkdir -p /opt/qcom-licenses/"
 adb push snapdragon-flight-license.bin /opt/qcom-licenses/
 ```
 
@@ -103,9 +105,7 @@ Then manually start snav with:
 sudo snav
 ```
 
-When snav starts, it will read the param file provided, which tells it to flash the ESC with the firmware provided in the deb file.  It will also use the ESC parameters provided for the drone's motor/prop set.
-
-After the flashing it complete, you should hear TODO.  You can then stop snav with Ctrl-C
+When snav starts, it will read the param file provided, which tells it to flash the ESC with the firmware provided in the deb file.  It will also use the ESC parameters provided for the drone's motor/prop set.  This process will take approximately 30 seconds.  You should hear each of the four ESCs beep, one at a time.  After they are finished flashing, the motors will play a tone, and the rear LED with start flashing with the SNAV flight mode.  Now stop snav in the terminal with Ctrl-C.  Exit the adb shell (Ctrl-D or "exit").
 
 Now the vehicle is ready for its flight parameters. Transfer them to your board with:
 
@@ -125,7 +125,7 @@ or simply restart your vehicle.  Snav should now successfully start, making a to
 ```bash
 adb shell
 cd /etc/snav
-./configure_vio.sh
+./configure_vio.sh -c downward
 ```
 
 After that, it's time to start flying!  Reference the user guide for next steps in flight testing.
