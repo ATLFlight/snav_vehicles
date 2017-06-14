@@ -43,26 +43,29 @@
     <param name="camera_offset_y" value="0.0"/>
   </optic_flow_estimator_params>
 
+
+
   <voltage_monitor_params>
-    <param name="voltage_warn_threshold" value="10.8"/>
-    <param name="voltage_warn_critical"   value="10.57"/>
-    <param name="voltage_force_landing"   value="10.57"/>
+    <param name="voltage_warn_threshold" value="10.7"/>
+    <param name="voltage_warn_critical"   value="10.47"/>
+    <param name="voltage_force_landing"   value="10.47"/>
     <param name="voltage_no_start"        value="10"/>
-    <param name="voltage_warn_threshold_external" value="10.8"/>
-    <param name="voltage_warn_critical_external"   value="10.57"/>
-    <param name="voltage_force_landing_external"   value="10.57"/>
     <param name="voltage_no_start_external"        value="10"/>
     <param name="voltage_landing_reset_threshold" value="11.5"/>
     <param name="low_voltage_thrust_slope" value="1000"/>
   </voltage_monitor_params>
 
   <att_control_params>
-    <param name="kp_roll_moment"   value="41.91" />
-    <param name="kp_pitch_moment"  value="43.09" />
-    <param name="kpy"              value="87.5"/>
-    <param name="kd_roll_moment"   value="4.85" />
-    <param name="kd_pitch_moment"  value="4.99" />
-    <param name="kdy"              value="18.6"/>
+    <param name="kp_roll_moment"   value="43.09" derived_from="1.171"/>
+    <param name="kp_pitch_moment"  value="41.91" derived_from="1.139"/>
+    <param name="kd_roll_moment"   value="4.99" derived_from="1.171"/>
+    <param name="kd_pitch_moment"  value="4.85" derived_from="1.139"/>
+    <param name="kpy"              value="163.68"/>
+    <param name="kdy"              value="29.46"/>
+
+    <param name="ang_vel_z_ff_factor" value="0.5"/>
+    <param name="yaw_filter_type" value="2"/>
+    <param name="second_order_yaw_filter_cutoff_freq" value="43.133"/>
 
     <param name="prop_config_type" value="0" />
     <param name="prop_config_Dx"   value="0.066"/>
