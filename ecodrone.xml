@@ -56,10 +56,10 @@
   </voltage_monitor_params>
 
   <att_control_params>
-    <param name="kp_roll_moment"   value="43.09" derived_from="1.171"/>
-    <param name="kp_pitch_moment"  value="41.91" derived_from="1.139"/>
-    <param name="kd_roll_moment"   value="4.99" derived_from="1.171"/>
-    <param name="kd_pitch_moment"  value="4.85" derived_from="1.139"/>
+    <param name="kp_roll_moment"   value="43.09"/>
+    <param name="kp_pitch_moment"  value="41.91"/>
+    <param name="kd_roll_moment"   value="4.99"/>
+    <param name="kd_pitch_moment"  value="4.85"/>
     <param name="kpy"              value="163.68"/>
     <param name="kdy"              value="29.46"/>
 
