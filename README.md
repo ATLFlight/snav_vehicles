@@ -120,7 +120,7 @@ adb shell
 sudo start snav
 ```
 
-or simply restart your vehicle.  Snav should now successfully start, making a tone and flashing the LED.  The last thing to do is set up the vehicle to use VIO (Visual-Internal Odometry) for flight control. Log into the board, navigate to /etc/snav, and run configure_vio.sh:
+or simply restart your vehicle.  Snav should now successfully start, making a tone and flashing the LED.  The last thing to do is set up the vehicle to use VIO (Visual-Inertial Odometry) for flight control. Log into the board, navigate to /etc/snav, and run configure_vio.sh:
 
 ```bash
 adb shell
