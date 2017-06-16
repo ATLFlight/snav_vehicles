@@ -47,8 +47,8 @@
 
   <voltage_monitor_params>
     <param name="voltage_warn_threshold" value="10.7"/>
-    <param name="voltage_warn_critical"   value="10.47"/>
-    <param name="voltage_force_landing"   value="10.47"/>
+    <param name="voltage_warn_critical"   value="10.35"/>
+    <param name="voltage_force_landing"   value="10.3"/>
     <param name="voltage_no_start"        value="10"/>
     <param name="voltage_no_start_external"        value="10"/>
     <param name="voltage_landing_reset_threshold" value="11.5"/>
