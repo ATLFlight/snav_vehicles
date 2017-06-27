@@ -72,9 +72,7 @@
     <param name="prop_config_Dy"   value="0.0864"/>
     <param name="prop_config_beta" value="0"/>
 
-    <param name="prop_rpm_thrust_curve_a0" value="0.0909"/>
-    <param name="prop_rpm_thrust_curve_a1" value="0.00011184"/>
-    <param name="prop_rpm_thrust_curve_a2" value="1.0840e-06"/>
+    <param name="prop_rpm_thrust_curve_a2" value="1.0945e-06"/>
     <param name="min_rpm" value="5000"/>
     <param name="max_rpm" value="14200"/>
     <param name="number_of_props" value="4"/>
