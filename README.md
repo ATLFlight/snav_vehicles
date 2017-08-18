@@ -1,5 +1,5 @@
 # snav_vehicles
-Snapdragon Navigator parameter files for different vehicle configurations
+Snapdragon Navigator parameter files for various vehicle configurations
 
 ## Getting Started with the Dragon Drone Development Kit
 #### Hardware
@@ -8,12 +8,13 @@ You'll need 3 pieces of hardware to begin
 - [Dragon Drone Development Kit](https://worldsway.com/product/dragon-drone-development-kit)
 - [Snapdragon Flight Board](https://shop.intrinsyc.com/collections/product-development-kits/products/qualcomm-snapdragon-flight-sbc)
 - [Snapdragon Flight ESC](https://shop.intrinsyc.com/collections/dragonboard-accessories/products/qualcomm-electronic-speed-control-board)
-- Optionally, a Spektrum DX-8 and Remote Receiver can be very useful for development
-Once you have all the hardware, follow the instructions from World Electronics to assemble your drone [here (Link TODO)]()
+- Optionally, a Spektrum DX-8 and Remote Receiver can be very useful for development.
+
+Once you have all the hardware, follow the instructions from World Electronics to assemble your drone [here](https://worldsway.com/wp-content/uploads/2017/08/DragonDDK-End-User-Assembly-Instructions_V2.pdf)
 
 #### Software
 
-Make sure that you have the most up-to-date platform and flight-controller addon.  Instructions can be found [here](https://github.com/ATLFlight/ATLFlightDocs/blob/master/PlatformGettingStarted.md)
+Make sure that you have the most up-to-date platform and flight-controller addon.  Instructions can be found [here](https://github.com/ATLFlight/ATLFlightDocs/blob/master/PlatformGettingStarted.md).  These instructions were tested with platform and addon versions 3.1.3.1.
 
 You will also need 3 deb files from QDN:
 - [Snapdragon Navigator (under SDK)](https://developer.qualcomm.com/hardware/snapdragon-flight/sd-navigator)
