@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/****************************************************************************
+ *   Copyright (c) 2017 Michael Shomin. All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ * 3. Neither the name ATLFlight nor the names of its contributors may be
+ *    used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ * OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+ * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ ****************************************************************************/
+-->
+
+<SnavParameters>
+  <position_control_params>
+    <param name="basethrust" value="410"/>
+  </position_control_params>
+
+  <optic_flow_estimator_params>
+    <param name="camera_offset_x" value="0.055"/>
+    <param name="camera_offset_y" value="0.0"/>
+  </optic_flow_estimator_params>
+
+
+
+  <voltage_monitor_params>
+    <param name="voltage_warn_threshold" value="10.7"/>
+    <param name="voltage_warn_critical"   value="10.35"/>
+    <param name="voltage_force_landing"   value="10.3"/>
+    <param name="voltage_no_start"        value="10"/>
+    <param name="voltage_no_start_external"        value="10"/>
+    <param name="voltage_landing_reset_threshold" value="11.5"/>
+    <param name="low_voltage_thrust_slope" value="1000"/>
+  </voltage_monitor_params>
+
+  <att_control_params>
+    <param name="kp_roll_moment"   value="43.09"/>
+    <param name="kp_pitch_moment"  value="41.91"/>
+    <param name="kd_roll_moment"   value="4.99"/>
+    <param name="kd_pitch_moment"  value="4.85"/>
+    <param name="kpy"              value="163.68"/>
+    <param name="kdy"              value="29.46"/>
+
+    <param name="ang_vel_z_ff_factor" value="0.5"/>
+    <param name="yaw_filter_type" value="2"/>
+    <param name="second_order_yaw_filter_cutoff_freq" value="43.133"/>
+
+    <param name="prop_config_type" value="0" />
+    <param name="prop_config_Dx"   value="0.066"/>
+    <param name="prop_config_Dy"   value="0.0864"/>
+    <param name="prop_config_beta" value="0"/>
+
+    <param name="prop_rpm_thrust_curve_a0" value="0.0909"/>
+    <param name="prop_rpm_thrust_curve_a1" value="0.00011184"/>
+    <param name="prop_rpm_thrust_curve_a2" value="1.0840e-06"/>
+    <param name="min_rpm" value="5000"/>
+    <param name="max_rpm" value="14200"/>
+    <param name="number_of_props" value="4"/>
+  </att_control_params>
+
+  <esc_interface_params>
+    <param name="esc_protocol" value="3" />
+  </esc_interface_params>
+
+  <rc_params>
+    <param name="min_thrust" value="105.0" />
+    <param name="max_thrust" value="900.0" />
+  </rc_params>
+
+  <orientation_params>
+    <param name="imu_R00" value="1.0"/>
+    <param name="imu_R01" value="0.0"/>
+    <param name="imu_R02" value="0.0"/>
+    <param name="imu_R10" value="0.0"/>
+    <param name="imu_R11" value="-1.0"/>
+    <param name="imu_R12" value="0.0"/>
+    <param name="imu_R20" value="0.0"/>
+    <param name="imu_R21" value="0.0"/>
+    <param name="imu_R22" value="-1.0"/>
+
+    <param name="mag_R00" value="-1.0"/>
+    <param name="mag_R01" value="0.0"/>
+    <param name="mag_R02" value="0.0"/>
+    <param name="mag_R10" value="0.0"/>
+    <param name="mag_R11" value="1.0"/>
+    <param name="mag_R12" value="0.0"/>
+    <param name="mag_R20" value="0.0"/>
+    <param name="mag_R21" value="0.0"/>
+    <param name="mag_R22" value="-1.0"/>
+
+    <param name="downward_cam_R00" value="0.0"/>
+    <param name="downward_cam_R01" value="-1.0"/>
+    <param name="downward_cam_R10" value="-1.0"/>
+    <param name="downward_cam_R11" value="0.0"/>
+  </orientation_params>
+
+  <rc_receiver_params>
+    <param name="is_binding_supported" value="1"/>
+    <param name="bind_mode"            value="2"/>
+    <param name="power_ctrl_pin"       value="69"/>
+    <param name="bind_pin"             value="50"/>
+  </rc_receiver_params>
+
+  <device_drivers_params>
+    <param name="rc0_driver_file_name"     value="librc0_spektrum_driver.so"/>
+    <param name="baro0_driver_file_name"   value="libbaro0_bmp280_vsense0_ltc2946_driver.so"/>
+    <param name="vsense0_driver_file_name" value="libbaro0_bmp280_vsense0_ltc2946_driver.so"/>
+    <param name="isense0_driver_file_name" value="libbaro0_bmp280_vsense0_ltc2946_driver.so"/>
+    <param name="mag0_driver_file_name"    value="libmag0_hmc5883l_driver.so"/>
+    <param name="sonar0_driver_file_name"  value="libsonar0_maxbotix_driver.so"/>
+    <param name="gnss0_driver_file_name"   value="libgnss0_ublox_driver.so"/>
+
+    <param name="imu0_driver_file_name"    value="libimu_mpu_driver.so"/>
+    <param name="imu0_update_rate_hz"      value="500"/>
+    <param name="imu0_hw_accel_lpf_hz"     value="184"/>
+    <param name="imu0_hw_gyro_lpf_hz"      value="184"/>
+    <param name="imu0_sw_accel_lpf_hz"     value="0"/>
+    <param name="imu0_sw_gyro_lpf_hz"      value="0"/>
+  </device_drivers_params>
+
+
+  <device_drivers_params>
+    <param name="imu0_device_path"         value="/dev/spi-1"/>
+    <param name="rc0_device_path"          value="/dev/tty-1"/>
+    <param name="esc0_device_path"         value="/dev/tty-2"/>
+    <param name="gnss0_device_path"        value="/dev/tty-3"/>
+    <param name="sonar0_device_path"       value="/dev/tty-4"/>
+
+    <param name="baro0_device_path"        value="/dev/iic-3"/>
+    <param name="vsense0_device_path"      value="/dev/iic-3"/>
+    <param name="isense0_device_path"      value="/dev/iic-3"/>
+    <param name="mag0_device_path"         value="/dev/iic-8"/>
+  </device_drivers_params>
+
+  <orientation_params>
+    <param name="vehicle_center_to_imu_x" value="0.0700"/>
+    <param name="vehicle_center_to_imu_y" value="0.01638"/>
+    <param name="vehicle_center_to_imu_z" value="-0.01650"/>
+  </orientation_params>
+</SnavParameters>

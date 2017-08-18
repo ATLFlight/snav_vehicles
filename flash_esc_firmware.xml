@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/****************************************************************************
+ *   Copyright (c) 2017 Michael Shomin. All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ * 3. Neither the name ATLFlight nor the names of its contributors may be
+ *    used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ * OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+ * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ ****************************************************************************/
+-->
+
+<!-- This file is intended to flash ESC firmware.
+     It is not intended to be a flyable configuration -->
+
+<SnavParameters>
+
+  <!-- These are the parameters for flashing ESC firmware -->
+  <esc_firmware_params>
+    <param name="firmware_file_name" value="snav_esc_firmware_v12.bin"/>
+    <param name="config_file_name" value="snav_esc_params_3s_mn1804x2400_gf5040.eep"/>
+    <param name="force_firmware_update" value="1"/>
+    <param name="force_config_update" value="1"/>
+    <param name="config_bit_rate" value="57600"/>
+  </esc_firmware_params>
+
+
+
+  <!-- ====================================================================== -->
+  <!-- All the following paramters are required by snav.
+       The do not matter for ESC flashing and are not intended to be flyable.
+       After flashing esc firmware, use a different snav configuration xml file -->
+  <!-- ====================================================================== -->
+
+  <orientation_params>
+    <param name="imu_R00" value="1.0"/>
+    <param name="imu_R01" value="0.0"/>
+    <param name="imu_R02" value="0.0"/>
+    <param name="imu_R10" value="0.0"/>
+    <param name="imu_R11" value="-1.0"/>
+    <param name="imu_R12" value="0.0"/>
+    <param name="imu_R20" value="0.0"/>
+    <param name="imu_R21" value="0.0"/>
+    <param name="imu_R22" value="-1.0"/>
+
+    <param name="mag_R00" value="-1.0"/>
+    <param name="mag_R01" value="0.0"/>
+    <param name="mag_R02" value="0.0"/>
+    <param name="mag_R10" value="0.0"/>
+    <param name="mag_R11" value="1.0"/>
+    <param name="mag_R12" value="0.0"/>
+    <param name="mag_R20" value="0.0"/>
+    <param name="mag_R21" value="0.0"/>
+    <param name="mag_R22" value="-1.0"/>
+  </orientation_params>
+
+  <device_drivers_params>
+    <param name="rc0_driver_file_name"     value="librc0_spektrum_driver.so"/>
+    <param name="baro0_driver_file_name"   value="libbaro0_bmp280_vsense0_ltc2946_driver.so"/>
+    <param name="vsense0_driver_file_name" value="libbaro0_bmp280_vsense0_ltc2946_driver.so"/>
+    <param name="isense0_driver_file_name" value="libbaro0_bmp280_vsense0_ltc2946_driver.so"/>
+    <param name="mag0_driver_file_name"    value="libmag0_hmc5883l_driver.so"/>
+    <param name="sonar0_driver_file_name"  value="libsonar0_maxbotix_driver.so"/>
+    <param name="gnss0_driver_file_name"   value="libgnss0_ublox_driver.so"/>
+
+    <param name="imu0_driver_file_name"    value="libimu_mpu_driver.so"/>
+    <param name="imu0_update_rate_hz"      value="500"/>
+    <param name="imu0_hw_accel_lpf_hz"     value="184"/>
+    <param name="imu0_hw_gyro_lpf_hz"      value="184"/>
+    <param name="imu0_sw_accel_lpf_hz"     value="0"/>
+    <param name="imu0_sw_gyro_lpf_hz"      value="0"/>
+  </device_drivers_params>
+
+
+  <device_drivers_params>
+    <param name="imu0_device_path"         value="/dev/null"/>
+    <!-- This is the wrong address for imu0.  It is intended to make this param file not
+    suitable for flight.  This file is only intended for flash ESC firmware and params -->
+
+    <param name="rc0_device_path"          value="/dev/tty-1"/>
+    <param name="esc0_device_path"         value="/dev/tty-2"/>
+    <param name="gnss0_device_path"        value="/dev/tty-3"/>
+    <param name="sonar0_device_path"       value="/dev/tty-4"/>
+
+    <param name="baro0_device_path"        value="/dev/iic-3"/>
+    <param name="vsense0_device_path"      value="/dev/iic-3"/>
+    <param name="isense0_device_path"      value="/dev/iic-3"/>
+    <param name="mag0_device_path"         value="/dev/iic-8"/>
+  </device_drivers_params>
+
+  <orientation_params>
+    <param name="vehicle_center_to_imu_x" value="0.0700"/>
+    <param name="vehicle_center_to_imu_y" value="0.01638"/>
+    <param name="vehicle_center_to_imu_z" value="-0.01650"/>
+  </orientation_params>
+
+  <position_control_params>
+    <param name="basethrust" value="410"/>
+  </position_control_params>
+
+  <optic_flow_estimator_params>
+    <param name="camera_offset_x" value="0.055"/>
+    <param name="camera_offset_y" value="0.0"/>
+  </optic_flow_estimator_params>
+
+  <voltage_monitor_params>
+    <param name="voltage_warn_threshold" value="10.8"/>
+    <param name="voltage_warn_critical"   value="10.57"/>
+    <param name="voltage_force_landing"   value="10.57"/>
+    <param name="voltage_no_start"        value="10"/>
+    <param name="voltage_warn_threshold_external" value="10.8"/>
+    <param name="voltage_warn_critical_external"   value="10.57"/>
+    <param name="voltage_force_landing_external"   value="10.57"/>
+    <param name="voltage_no_start_external"        value="10"/>
+    <param name="voltage_landing_reset_threshold" value="11.5"/>
+    <param name="low_voltage_thrust_slope" value="1000"/>
+  </voltage_monitor_params>
+
+  <att_control_params>
+    <param name="kp_roll_moment"   value="41.91" />
+    <param name="kp_pitch_moment"  value="43.09" />
+    <param name="kpy"              value="64.8"/>
+    <param name="kd_roll_moment"   value="4.85" />
+    <param name="kd_pitch_moment"  value="4.99" />
+    <param name="kdy"              value="10.8"/>
+
+    <param name="prop_config_type" value="0" />
+    <param name="prop_config_Dx"   value="0.066"/>
+    <param name="prop_config_Dy"   value="0.091"/>
+    <param name="prop_config_beta" value="0"/>
+
+    <param name="prop_rpm_thrust_curve_a0" value="0.0909"/>
+    <param name="prop_rpm_thrust_curve_a1" value="0.00011184"/>
+    <param name="prop_rpm_thrust_curve_a2" value="1.0840e-06"/>
+    <param name="min_rpm" value="5000"/>
+    <param name="max_rpm" value="14200"/>
+    <param name="number_of_props" value="4"/>
+  </att_control_params>
+
+  <esc_interface_params>
+    <param name="esc_protocol" value="3" />
+  </esc_interface_params>
+
+  <rc_params>
+    <param name="min_thrust" value="105.0" />
+    <param name="max_thrust" value="900.0" />
+  </rc_params>
+
+</SnavParameters>
