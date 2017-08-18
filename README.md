@@ -1,5 +1,5 @@
 # snav_vehicles
-Snapdragon Navigator parameter files for various vehicle configurations
+Snapdragon Navigator (SNAV) parameter files for various vehicle configurations
 
 ## Getting Started with the Dragon Drone Development Kit
 #### Hardware
@@ -16,9 +16,9 @@ Once you have all the hardware, follow the instructions from World Electronics t
 
 Make sure that you have the most up-to-date platform and flight-controller addon.  Instructions can be found [here](https://github.com/ATLFlight/ATLFlightDocs/blob/master/PlatformGettingStarted.md).  These instructions were tested with platform and addon versions 3.1.3.1.
 
-You will also need 3 deb files from QDN:
+You will also need 3 deb files from the Qualcomm Developer Network (QDN):
 - [Snapdragon Navigator (under SDK)](https://developer.qualcomm.com/hardware/snapdragon-flight/sd-navigator)
-- [Snav ESC Firmware/Params (under SDK)](https://developer.qualcomm.com/hardware/snapdragon-flight/sd-navigator)
+- [SNAV ESC Firmware/Params (under SDK)](https://developer.qualcomm.com/hardware/snapdragon-flight/sd-navigator)
 - [Machine Vision Library (version 0.9.1)](https://developer.qualcomm.com/software/machine-vision-sdk/tools)
 
 Note the currently supported software versions for the Dragon DDK are Snapdragon Navigator 1.2.31 and MV 0.9.1
@@ -28,8 +28,8 @@ Many of the below step require the use of adb ([Android Debug Bridge](https://de
 #### License File
 Lastly, you need a community license file from QDN: [License Request](https://developer.qualcomm.com/hardware/snapdragon-flight/missing-key-req)
 
-### Install the fc_addon
-Unzip the fc_addon file and run the install script to push the necessary files via adb
+### Install the flight controller
+Unzip the flight controller addon file (from Intrinsyc link above) and run the install script to push the necessary files via adb
 
 ```bash
 unzip Flight_3.1.3.1_qcom_flight_controller_hexagon_sdk_add_on.zip
@@ -47,7 +47,7 @@ installfcaddon.bat
 
 ### Push your deb files
 
-Next, navigate to your downloaded deb files and transfer them to your board:
+Next, navigate to your downloaded deb files (from QDN) and transfer them to your board:
 
 ```bash
 adb push mv_0.9.1_8x74.deb /home/linaro/
@@ -92,34 +92,35 @@ Log into the board:
 adb shell
 ```
 
-If you just installed snav and transferred you license, snav should not be running. To be certain, however, run:
+If you just installed SNAV and transferred you license, SNAV should not be running. To be certain, however, run:
 
 ```bash
 sudo stop snav
 ```
 
-Then manually start snav with:
+Then manually start SNAV with:
 
 ```bash
 sudo snav
 ```
 
-When snav starts, it will read the param file provided, which tells it to flash the ESC with the firmware provided in the deb file.  It will also use the ESC parameters provided for the drone's motor/prop set.  This process will take approximately 30 seconds.  You should hear each of the four ESCs beep, one at a time.  After they are finished flashing, the motors will play a tone, and the rear LED with start flashing with the SNAV flight mode.  Now stop snav in the terminal with Ctrl-C.  Exit the adb shell (Ctrl-D or "exit").
+When SNAV starts, it will read the param file provided, which tells it to flash the ESC with the firmware provided in the deb file.  It will also use the ESC parameters provided for the drone's motor/prop set.  This process will take approximately 30 seconds.  You should hear each of the four ESCs beep, one at a time.  After they are finished flashing, the motors will play a tone, and the rear LED with start flashing with the SNAV flight mode.  Now stop SNAV in the terminal with Ctrl-C.  Exit the adb shell (Ctrl-D or "exit").
 
-Now the vehicle is ready for its flight parameters. Transfer them to your board with:
+Now the vehicle is ready for its flight parameters. From this repo (snav_vehicles), you'll need to get the dragonddk.xml param file. Navigate to it and transfer it to your board:
+
 
 ```bash
 adb push dragonddk.xml /usr/share/data/adsp/snav_params.xml
 ```
 
-You can now either start snav via upstart:
+You can now either start SNAV via upstart:
 
 ```bash
 adb shell
 sudo start snav
 ```
 
-or simply restart your vehicle.  Snav should now successfully start, making a tone and flashing the LED.  The last thing to do is set up the vehicle to use VIO (Visual-Inertial Odometry) for flight control. Log into the board, navigate to /etc/snav, and run configure_vio.sh:
+or simply restart your vehicle.  SNAV should now successfully start, making a tone and flashing the LED.  The last thing to do is set up the vehicle to use VIO (Visual-Inertial Odometry) for flight control. Log into the board, navigate to /etc/snav, and run configure_vio.sh:
 
 ```bash
 adb shell
@@ -134,5 +135,10 @@ adb shell
 snav_calibration_manager -s
 ```
 
-After that, it's time to start flying!  Reference the user guide for next steps in flight testing.
+After that, it's time to start flying!  Reference the [User Guide (QDN)](https://developer.qualcomm.com/download/snapdragon-flight/navigator-user-guide.pdf) for next steps in flight testing.
+
+If you have any questions about Snapdragon Navigator of Snapdragon Flight, you can get help on the [Qualcomm Developer Network Forum](https://developer.qualcomm.com/forums/hardware/snapdragon-flight).
+
+If you'd like to use SNAV with ROS, take a look at [snav_ros](https://github.com/ATLFlight/snav_ros).
+
 
