@@ -1,39 +1,37 @@
 # snav_vehicles
 Snapdragon Navigator parameter files for different vehicle configurations
 
-## TODO
-- [ ] Snav params overview
-- [ ] Fill in QDN links once available
-- [ ] Contributing.md
-
-## Getting Started with the Eco Drone (Name TBD)
+## Getting Started with the Dragon Drone Development Kit
 #### Hardware
 You'll need 3 pieces of hardware to begin
 
-- [Ecodrone from World Electronics (Link TODO)]()
+- [Dragon Drone Development Kit](https://worldsway.com/product/dragon-drone-development-kit)
 - [Snapdragon Flight Board](https://shop.intrinsyc.com/collections/product-development-kits/products/qualcomm-snapdragon-flight-sbc)
 - [Snapdragon Flight ESC](https://shop.intrinsyc.com/collections/dragonboard-accessories/products/qualcomm-electronic-speed-control-board)
-
+- Optionally, a Spektrum DX-8 and Remote Receiver can be very useful for development
 Once you have all the hardware, follow the instructions from World Electronics to assemble your drone [here (Link TODO)]()
 
 #### Software
-The platform distributed by Intrinsyc lacks some features necessary for flight. To get these features, you will first need to get the fc_addon from [here (Link TODO)]()
+
+Make sure that you have the most up-to-date platform and flight-controller addon.  Instructions can be found [here](https://github.com/ATLFlight/ATLFlightDocs/blob/master/PlatformGettingStarted.md)
 
 You will also need 3 deb files from QDN:
-- [Snapdragon Navigator (Link TODO)]()
-- [Snav ESC Firmware/Params (Link TODO)]()
-- [Machine Vision Library (Link TODO)]()
+- [Snapdragon Navigator (under SDK)](https://developer.qualcomm.com/hardware/snapdragon-flight/sd-navigator)
+- [Snav ESC Firmware/Params (under SDK)](https://developer.qualcomm.com/hardware/snapdragon-flight/sd-navigator)
+- [Machine Vision Library (version 0.9.1)](https://developer.qualcomm.com/software/machine-vision-sdk/tools)
+
+Note the currently supported software versions for the Dragon DDK are Snapdragon Navigator 1.2.31 and MV 0.9.1
 
 Many of the below step require the use of adb ([Android Debug Bridge](https://developer.android.com/studio/command-line/adb.html)) for communication via usb.  Make sure that your Snapdragon Flight board is connected via usb and that you have adb installed.  The board will also need to be powered through the ESC.  Power over USB will not start the Snapdragon Flight board.
 
 #### License File
-Lastly, you need a community license file from QDN: [License Request (Link TODO)]()
+Lastly, you need a community license file from QDN: [License Request](https://developer.qualcomm.com/hardware/snapdragon-flight/missing-key-req)
 
 ### Install the fc_addon
 Unzip the fc_addon file and run the install script to push the necessary files via adb
 
 ```bash
-unzip apq8074_05_04_2017_fcaddon.zip
+unzip Flight_3.1.3.1_qcom_flight_controller_hexagon_sdk_add_on.zip
 ```
 
 Linux/OSX:
@@ -110,7 +108,7 @@ When snav starts, it will read the param file provided, which tells it to flash 
 Now the vehicle is ready for its flight parameters. Transfer them to your board with:
 
 ```bash
-adb push ecodrone.xml /usr/share/data/adsp/snav_params.xml
+adb push dragonddk.xml /usr/share/data/adsp/snav_params.xml
 ```
 
 You can now either start snav via upstart:
