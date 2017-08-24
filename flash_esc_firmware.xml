@@ -142,7 +142,7 @@
   <att_control_params>
     <param name="kp_roll_moment"   value="41.91" />
     <param name="kp_pitch_moment"  value="43.09" />
-`    <param name="kpy"              value="64.8"/>
+    <param name="kpy"              value="64.8"/>
     <param name="kd_roll_moment"   value="4.85" />
     <param name="kd_pitch_moment"  value="4.99" />
     <param name="kdy"              value="10.8"/>
