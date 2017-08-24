@@ -1,6 +1,19 @@
 # snav_vehicles
 Snapdragon Navigator (SNAV) parameter files for various vehicle configurations
 
+## Version Compatibility
+
+The SNAV parameters in this repository are intended for particular versions of SNAV.
+
+This README is currently snav_vehicles version 1.1.0, compatible with SNAV 1.2.38.1.
+For previous versions, please see the table below
+
+| SNAV <br>Version        | snav_vehicles <br>Version  |
+| ------------- | -----:|
+| 1.2.31        | [1.0.0](https://github.com/ATLFlight/snav_vehicles/tree/1.0.0) |
+| 1.2.38.1      | [1.1.0](https://github.com/ATLFlight/snav_vehicles/tree/1.1.0) |
+
+
 ## Getting Started with the Dragon Drone Development Kit
 #### Hardware
 You'll need 3 pieces of hardware to begin
