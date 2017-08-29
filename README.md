@@ -154,4 +154,6 @@ If you have any questions about Snapdragon Navigator of Snapdragon Flight, you c
 
 If you'd like to use SNAV with ROS, take a look at [snav_ros](https://github.com/ATLFlight/snav_ros).
 
+snap_cam_ros is another useful tool for interfacing with Snapdragon Flight camera through ros: [snap_cam_ros](https://github.com/ATLFlight/snap_cam_ros)
+
 
